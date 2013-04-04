@@ -3,6 +3,7 @@ gemfile: Gemfile.ci
 
 before_install:
   ./plugins/mezuro/script/mezuro_rvm.sh
+  ./plugins/mezuro/script/kalibro.sh
 script:
   - "rvm reload"
   - "rvm use ruby-1.8.7-p302@mezuro"
