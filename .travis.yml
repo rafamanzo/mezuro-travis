@@ -4,6 +4,8 @@ gemfile: Gemfile.ci
 before_install:
   - ./plugins/mezuro/script/install/install-rvm.sh
   - ./plugins/mezuro/script/install/kalibro.sh
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
 script:
   - "rvm reload"
   - "rvm use ruby-1.8.7-p302@mezuro"
@@ -22,6 +24,16 @@ script:
   - "rake db:test:prepare"
   - "rake test:noosfero_plugins:mezuro:units"
   - "rake test:noosfero_plugins:mezuro:functionals"
+  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/configuration.feature"
+  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/reading.feature"
+  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/reading_group.feature"
+  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/repository.feature"
+  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/project.feature"
+  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/configuration.feature selenium"
+  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/reading.feature selenium"
+  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/reading_group.feature selenium"
+  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/repository.feature selenium"
+  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/project.feature selenium"
 
 notifications:
   email:
