@@ -162,3 +162,7 @@ Then /^I should see the "([^"]*)" color$/ do |color_name|
   found = elements.select { |element| color_name == element[:bgcolor]}.first
   assert_not_nil found
 end
+
+When /^I reload the page$/ do
+  visit page.driver.browser.current_url
+end
