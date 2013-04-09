@@ -97,6 +97,7 @@ Feature: Repository
       | repository_address            | https://github.com/user/project.git                             |
       | repository_configuration_id   | Sample Configuration                                            |
     And I press "Add"
+	And I reload and wait for the page
     Then I should see "My Name"
     And I should see "My Description"
     And I should see "ISC License (ISC)"
