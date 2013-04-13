@@ -60,7 +60,7 @@ gem install --no-ri --no-rdoc gyoku -v 0.4.6
 gem install --no-ri --no-rdoc akami -v 1.2.0
 gem install --no-ri --no-rdoc xpath -v 0.1.4
 gem install --no-ri --no-rdoc mime-types -v 1.19
-gem install --no-ri --no-rdoc capybara -v 1.1.1
+gem install --no-ri --no-rdoc capybara -v 1.1.4
 gem install --no-ri --no-rdoc term-ansicolor -v 1.0.7
 gem install --no-ri --no-rdoc diff-lcs -v 1.1.3
 gem install --no-ri --no-rdoc cucumber -v 1.1.0
