@@ -9,6 +9,7 @@ before_install:
 script:
   - "rvm reload"
   - "rvm use ruby-1.8.7-p302@mezuro"
+  - "gem list"
   - "cp config/database.yml.sqlite3 config/database.yml"
   - "cp config/solr.yml.dist config/solr.yml"
   - "cp plugins/mezuro/service.yml.example plugins/mezuro/service.yml"
