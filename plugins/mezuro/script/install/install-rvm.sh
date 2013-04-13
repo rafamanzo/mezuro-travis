@@ -90,7 +90,7 @@ gem install --no-ri --no-rdoc system_timer -v 1.2.4
 gem install --no-ri --no-rdoc tango -v 0.1.15
 gem install --no-ri --no-rdoc tidy -v 1.1.2
 gem install --no-ri --no-rdoc treetop -v 1.4.10
-#gem install --no-ri --no-rdoc webrat -v 0.5.1 # This gem generates conflict with capybara when running on xvfb
+gem install --no-ri --no-rdoc webrat -v 0.5.1
 gem install --no-ri --no-rdoc will_paginate -v 2.3.12
 gem install --no-ri --no-rdoc gettext -v 1.8.0
 
