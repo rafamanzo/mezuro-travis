@@ -9,7 +9,6 @@ before_install:
 script:
   - "rvm reload"
   - "rvm use ruby-1.8.7-p302@mezuro"
-  - "gem list"
   - "cp config/database.yml.sqlite3 config/database.yml"
   - "cp config/solr.yml.dist config/solr.yml"
   - "cp plugins/mezuro/service.yml.example plugins/mezuro/service.yml"
@@ -20,7 +19,6 @@ script:
   - "rake makemo"
 #  - "./script/sample-data"
   - "./script/noosfero-plugins enable mezuro"
-  - "#Prepare Mezuro for running functional and unit tests"
   - "rake solr:download"
   - "rake db:test:prepare"
   - "rake test:noosfero_plugins:mezuro:units"
@@ -30,11 +28,11 @@ script:
   - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/reading_group.feature"
   - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/repository.feature"
   - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/project.feature"
-  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/configuration.feature selenium"
-  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/reading.feature selenium"
-  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/reading_group.feature selenium"
-  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/repository.feature selenium"
-  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/project.feature selenium"
+#  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/configuration.feature selenium"
+#  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/reading.feature selenium"
+#  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/reading_group.feature selenium"
+#  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/repository.feature selenium"
+#  - "DISPLAY=:99.0 ./plugins/mezuro/script/tests/run_acceptance_tests.sh plugins/mezuro/features/project.feature selenium"
 
 notifications:
   email:
